@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import { EmBreveComponent } from './layouts/em-breve/em-breve.component';
+import { HomeComponent } from './layouts/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'em-construcao',
+    redirectTo: 'home',
     pathMatch: 'full', 
   },
   {
@@ -21,6 +23,26 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('src/app/layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+      }
+    ]
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('src/app/layouts/home/home.module').then(m => m.HomeModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({
@@ -28,7 +50,7 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: false
     })
   ],
   exports: [

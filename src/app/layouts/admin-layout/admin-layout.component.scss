@@ -1,0 +1,11 @@
+.container-2 {
+    margin-left: 250px;
+}
+
+.container-2.close {
+    margin-left: 85px;
+}
+
+.container-2.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
