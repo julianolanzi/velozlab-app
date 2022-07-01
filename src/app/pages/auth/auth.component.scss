@@ -58,13 +58,23 @@ form.sign-in-form {
     max-width: 380px;
     width: 100%;
     background-color: #f0f0f0;
-    margin: 10px 0;
+    margin: 12px 0;
     height: 55px;
     border-radius: 55px;
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 0.4rem;
     position: relative;
+}
+
+.text-danger p {
+    min-width: 380px;
+    width: 100%;
+    background: none;
+    line-height: 1;
+    font-size: 1rem;
+    color: red;
+    margin: 2px 15px;
 }
 
 .input-field i {
@@ -75,6 +85,7 @@ form.sign-in-form {
     font-size: 1.1rem;
 }
 
+
 .input-field input {
     background: none;
     outline: none;
@@ -84,6 +95,7 @@ form.sign-in-form {
     font-size: 1.1rem;
     color: #333;
 }
+
 
 .input-field input::placeholder {
     color: #aaa;
@@ -388,5 +400,21 @@ form.sign-in-form {
     .container.sign-up-mode:before {
         bottom: 28%;
         left: 50%;
+    }
+}
+
+.menssgemError {
+    ul li {
+        list-style: none;
+        margin: 5px 0;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        color: red;
+    }
+}
+.menssgemSucess {
+    i {
+        color: green;
     }
 }

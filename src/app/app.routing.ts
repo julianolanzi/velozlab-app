@@ -10,7 +10,7 @@ import { HomeComponent } from './layouts/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full', 
   },
   {
