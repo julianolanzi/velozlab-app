@@ -7,7 +7,7 @@ export abstract class BaseService {
 
     public LocalStorage = new LocalStorageUtils();
     
-    protected UrlServiceV1: string = "http://api.velozlab.com.br"
+    protected UrlServiceV1: string = "http://api.velozlab.com.br/"
 
     protected ObterHeaderJson() {
         return {

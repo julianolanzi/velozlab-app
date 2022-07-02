@@ -141,7 +141,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
 
 
   adicionarConta() {
-    if (this.loginForm.dirty && this.loginForm.valid) {
+    if (this.cadastroForm.dirty && this.cadastroForm.valid) {
 
       this.usuario = Object.assign({}, this.usuario, this.cadastroForm.value);
 

@@ -26,7 +26,7 @@ export class RegisterService extends BaseService {
             .post(this.UrlServiceV1 + 'user/login', usuario, this.ObterHeaderJson())
             .pipe(map(this.extractData),
                 catchError(this.serviceError));
-
+        console.log(response);
         return response;
     }
 }
