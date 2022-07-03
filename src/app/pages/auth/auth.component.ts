@@ -26,6 +26,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
   errors: any[] = [];
   isLoginSucess: boolean;
   isRegisterSucess: boolean;
+  isLoading: boolean;
 
   cadastroForm: FormGroup;
   loginForm: FormGroup;
@@ -142,7 +143,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
 
   adicionarConta() {
     if (this.cadastroForm.dirty && this.cadastroForm.valid) {
-
+      this.isLoading = true;
       this.usuario = Object.assign({}, this.usuario, this.cadastroForm.value);
 
       this.contaService.registrarUsuario(this.usuario)
@@ -159,21 +160,24 @@ export class AuthComponent implements OnInit, AfterViewInit {
 
     this.contaService.LocalStorage.salvarDadosLocaisUsuario(response);
     if (response != this.errors) {
+      this.isLoading = false;
       this.isRegisterSucess = true;
     }
 
     setTimeout(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/auth']);
     }, 3000);
 
 
   }
   processarLoginSucesso(response: any) {
+    
     this.cadastroForm.reset();
     this.errors = [];
 
     this.contaService.LocalStorage.salvarDadosLocaisUsuario(response);
     if (response != this.errors) {
+      this.isLoading = false;
       this.isLoginSucess = true;
     }
 
@@ -183,13 +187,14 @@ export class AuthComponent implements OnInit, AfterViewInit {
   }
 
   processarFalha(fail: any) {
+    this.isLoading = false;
 
     this.errors = fail.error.errors;
   }
 
   login() {
     if (this.loginForm.dirty && this.loginForm.valid) {
-
+      this.isLoading = true;
       this.usuario = Object.assign({}, this.usuario, this.loginForm.value);
 
       this.contaService.loginUsuario(this.usuario)
