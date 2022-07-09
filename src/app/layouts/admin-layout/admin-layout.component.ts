@@ -28,6 +28,17 @@ export class AdminLayoutComponent implements OnInit {
 
     })
 
+    modeSwitch.addEventListener("click" , () =>{
+      body.classList.toggle("dark");
+      
+      if(body.classList.contains("dark")){
+          modeText.innerText = "Light mode";
+      }else{
+          modeText.innerText = "Dark mode";
+          
+      }
+  });
+
   }
 
 }

@@ -10,6 +10,15 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    let toggle = document.querySelector(".toggle") as HTMLElement;
+    let container = document.querySelector(".container-footer") as HTMLElement;
+
+    toggle.addEventListener("click", () => {
+      
+      container.classList.toggle("close");
+
+    })
   }
 
 }

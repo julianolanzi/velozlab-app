@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './layouts/home/home.component';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 
 @NgModule({

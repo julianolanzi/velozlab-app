@@ -9,10 +9,11 @@
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: #FFD220;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --text2-color: #FFF;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -34,6 +35,7 @@ body.dark{
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --text2-color: #FFF;
 }
 
 
@@ -131,7 +133,7 @@ header .image-text .profession{
 
 .sidebar header .toggle{
     position: absolute;
-    top: 50%;
+    top: 100%;
     right: -25px;
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
@@ -263,4 +265,67 @@ body.dark .switch::before{
     height: 100vh;
     width: 85px;
 }
+
+.container-2 {
+    margin-left: 250px;
+}
+
+.container-2.close {
+    margin-left: 85px;
+}
+
+.container-2.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 95%;
+       
+    }
+    .sidebar.close{
+        width: 0;
+        margin-left: -28px;
+
+       
+        
+    }
+
+    .sidebar.close header .image img{
+        opacity: 0;
+    }
+    .container-2 {
+        margin-left: 0;
+        width: 0px;
+    }
+    .container-2.close {
+        margin-left: 0px;
+    }
+
+    
+
+    .sidebar header .toggle{
+        position: absolute;
+        top: 50vh;
+        right: -45px;
+        transform: translateY(-50%) rotate(180deg);
+        height: 50px;
+        width: 50px;
+        background-color: var(--primary-color);
+        color: var(--sidebar-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+        transition: var(--tran-05);
+    }
+
+    
+}
+
 

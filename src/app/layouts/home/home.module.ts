@@ -8,6 +8,7 @@ import { HomeRoutes } from './home.routing';
 import { AuthComponent } from 'src/app/pages/auth/auth.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { RegisterService } from 'src/app/services/register.service';
+import { LoadingComponent } from 'src/app/pages/loading/loading.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { RegisterService } from 'src/app/services/register.service';
   declarations: [
     HomeComponent,
     AuthComponent,
+    LoadingComponent,
   ],
   providers: [
     RegisterService,

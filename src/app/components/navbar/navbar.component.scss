@@ -1,0 +1,23 @@
+.container-nav {
+    top: 0;
+    width: calc(100% - 85px);
+    height: 60px;
+    background-color: var(--primary-color);
+    position: fixed;
+    text-align: center;
+    transition: var(--tran-05);
+    p {
+       padding: 20px 15px 20px 15px;
+        color: var(--text2-color);
+    }
+}
+.container-nav.close {
+    transition: var(--tran-05);
+    width: calc(100% - 250px);
+}
+
+@media (max-width: 768px) {
+    .container-nav {
+        width: 100%;
+    }
+}
